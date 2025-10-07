@@ -1,8 +1,30 @@
 Overview: 
 A Python-based project that uses eye movements to control the volume on a laptop. It is designed to provide hands-free audio control, especially helpful for users with limited mobility or accessibility needs.
 
-Features
-Control laptop volume using only eye movements
-Detects eye landmarks in real-time
-Adjusts volume based on eye landmark distances (e.g. blink or eye opening/closing)
-Hands-free, camera-based interaction
+Features:
+• Control laptop volume using only eye movements
+• Detects eye landmarks in real-time
+• Adjusts volume based on eye landmark distances (e.g. blink or eye opening/closing)
+• Hands-free, camera-based interaction
+
+Technologies Used:
+• Python
+• OpenCV – for video capture and image processing
+• MediaPipe – for real-time eye landmark detection
+• AudioUtilities and IAudioEndpointVolume – to interface with system audio controls on Windows
+
+How It Works:
+1. The webcam captures a live feed of your face.
+2. MediaPipe detects and tracks key eye landmarks.
+3. The distance between specific landmarks (here upper and lower eyes, and blink distance) is measured.
+4. Based on blink distance:
+    • If distance is higher than thresold, volume increases.
+    • If distance is lower than thresold,  volume decreases.
+5. The volume is adjusted in real time through the Windows audio interface.
+
+Set Up: 
+1. Clone or download this repository. (*Make sure all files — including the VolumeEyeControl.py and Module.py — are in the same folder.)
+2. Install the required Python libraries: (pip install opencv-python mediapipe pycaw comtypes)
+3. Connect your webcam.
+4. The script uses your default webcam (usually cv2.VideoCapture(0)), but you may need to change the index (0, 1, etc.) depending on your system configuration.
+5. Run the eye tracking script.
