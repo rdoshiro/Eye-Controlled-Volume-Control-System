@@ -1,2 +1,8 @@
 Overview: 
 A Python-based project that uses eye movements to control the volume on a laptop. It is designed to provide hands-free audio control, especially helpful for users with limited mobility or accessibility needs.
+
+Features
+Control laptop volume using only eye movements
+Detects eye landmarks in real-time
+Adjusts volume based on eye landmark distances (e.g. blink or eye opening/closing)
+Hands-free, camera-based interaction
